@@ -6,19 +6,19 @@ public class Orcamento {
 
 	private BigDecimal valor;
 	
-	private int quantidadeIntens;
+	private int quantidadeItens;
 
 	public Orcamento(BigDecimal valor, int quantidadeIntens) {
 		this.valor = valor;
-		this.quantidadeIntens = quantidadeIntens;
+		this.quantidadeItens = quantidadeIntens;
 	}
 
 	public BigDecimal getValor() {
 		return valor;
 	}
 	
-	public int getQuantidadeIntens() {
-		return quantidadeIntens;
+	public int getQuantidadeItens() {
+		return quantidadeItens;
 	}
 
 }
