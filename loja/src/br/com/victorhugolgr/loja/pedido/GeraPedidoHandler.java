@@ -1,17 +1,23 @@
 package br.com.victorhugolgr.loja.pedido;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import br.com.victorhugolgr.loja.orcamento.Orcamento;
+import br.com.victorhugolgr.loja.pedido.acao.AcaoAposGerarPedido;
 
 public class GeraPedidoHandler {
 
-	//contrutor com injecao de pependecias: repository, service, etc.
+	private List<AcaoAposGerarPedido> acoes;
 	
+	public GeraPedidoHandler(List<AcaoAposGerarPedido> acoes) {
+		this.acoes = acoes;
+	}
+
 	public void execute(GeraPedido dados) {
 		Orcamento orcamento = new Orcamento(dados.getValorOrcamento(), dados.getQuantidadeItens());
 		Pedido pedido =  new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 		
-		System.out.println("Minha lógica de negócio que se utiliza dos dados vindo via injecao, por exemplo.");
+		acoes.forEach(acao-> acao.executar(pedido));
 	}
 }
