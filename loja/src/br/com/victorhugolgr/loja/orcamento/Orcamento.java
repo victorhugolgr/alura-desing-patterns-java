@@ -38,6 +38,12 @@ public class Orcamento implements Orcavel{
 	}
 
 	public BigDecimal getValor() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return valor;
 	}
 	
