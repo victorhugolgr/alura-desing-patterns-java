@@ -1,10 +1,10 @@
 package br.com.victorhugolgr.loja;
 
-public class DamainException extends RuntimeException {
+public class DomainException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public DamainException(String message) {
+	public DomainException(String message) {
 		super(message);
 	}
 	
